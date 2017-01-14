@@ -42,9 +42,21 @@
 	<dict>
 		<key>NSExceptionDomains</key>
 		<dict>
-			<key>*</key>
+			<key>localhost</key>
 			<dict>
 				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
+			<key>azurewebsites.net</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
+			<key>auth0.com</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
 				<true/>
 			</dict>
 		</dict>
