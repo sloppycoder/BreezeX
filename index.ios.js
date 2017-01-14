@@ -7,50 +7,89 @@
 import React, { Component } from 'react';
 import codePush from "react-native-code-push";
 
+
 import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  Navigator,
+  TouchableHighlight
 } from 'react-native';
+
+import WelcomeView from './welcome-view';
+import ProfileView from './profile-view';
 
 @codePush
 export default class BreezeX extends Component {
   render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          My first react native app in Test Flight!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
+      return (
+        <Navigator style={styles.navigator}
+          initialRoute={{ name: "Welcome"}}
+          renderScene= { this.renderScene }
+          navigationBar={
+             <Navigator.NavigationBar
+               style={ styles.nav }
+               routeMapper={NavigationBarRouteMapper} />
+             }
+        />
     );
+  }
+
+  renderScene(route, navigator) {
+    if (route.name == "Welcome") {
+      return <WelcomeView navigator={navigator} {...route.passProps} />
+    }
+    if (route.name == "Profile") {
+      return <ProfileView navigator={navigator} {...route.passProps} />
+    }
   }
 }
 
+var NavigationBarRouteMapper = {
+  LeftButton(route, navigator, index, navState) {
+    if(index > 0) {
+      return (
+        <TouchableHighlight
+          underlayColor="transparent"
+          onPress={() => { if (index > 0) { navigator.pop() } }}>
+          <Text style={ styles.leftNavButtonText }>Back</Text>
+        </TouchableHighlight>)
+    }
+    else { return null }
+  },
+
+  RightButton(route, navigator, index, navState) {
+    return null
+  },
+
+  Title(route, navigator, index, navState) {
+    return <Text style={ styles.title }>Auth0 Sample</Text>
+  }
+};
+
 const styles = StyleSheet.create({
-  container: {
+  navigator: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  title: {
+    marginTop:4,
+    fontSize:16
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+  leftNavButtonText: {
+   	fontSize: 18,
+    marginLeft:13,
+    marginTop:2
   },
+  rightNavButtonText: {
+    fontSize: 18,
+    marginRight:13,
+    marginTop:2
+  },
+  nav: {
+    height: 60,
+    backgroundColor: '#efefef'
+  }
 });
 
 AppRegistry.registerComponent('BreezeX', () => BreezeX);

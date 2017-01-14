@@ -57,3 +57,7 @@ fastlane/screenshots
 
 #
 ios/pods
+
+#
+.vscode/.react
+
