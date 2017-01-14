@@ -5,6 +5,8 @@
  */
 
 import React, { Component } from 'react';
+import codePush from "react-native-code-push";
+
 import {
   AppRegistry,
   StyleSheet,
@@ -12,12 +14,13 @@ import {
   View
 } from 'react-native';
 
+@codePush
 export default class BreezeX extends Component {
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          My first react native app!
+          My first react native app in Test Flight!
         </Text>
         <Text style={styles.instructions}>
           To get started, edit index.ios.js
