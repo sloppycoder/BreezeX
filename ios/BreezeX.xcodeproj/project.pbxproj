@@ -13,6 +13,7 @@
 		00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302DC1ABCB9D200DB3ED1 /* libRCTNetwork.a */; };
 		00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */; };
 		00E356F31AD99517003FC87E /* BreezeXTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* BreezeXTests.m */; };
+		0FDF146139FB49DDA1BC0730 /* libRCTGoogleAnalyticsBridge.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 28CEC424882C4D82B3BC291D /* libRCTGoogleAnalyticsBridge.a */; };
 		133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C398B91ACF4ADC00677621 /* libRCTLinking.a */; };
 		139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139105C11AF99BAD00B5F7CC /* libRCTSettings.a */; };
 		139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139FDEF41B06529B00C62182 /* libRCTWebSocket.a */; };
@@ -27,6 +28,9 @@
 		5F2D06EBE1265575011450E6 /* libPods-BreezeX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DF2FDDEE7745723FDEEAB27 /* libPods-BreezeX.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		9A96EB3D1E746746E6677BEC /* libPods-BreezeXTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EDCBB963F76EDAB8DA255FA /* libPods-BreezeXTests.a */; };
+		9B5ED2671E2BAC2300A64ED3 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B5ED2661E2BAC2300A64ED3 /* libsqlite3.0.tbd */; };
+		9B5ED2841E2BAC3200A64ED3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B5ED2831E2BAC3200A64ED3 /* CoreData.framework */; };
+		9B5ED2861E2BAC3A00A64ED3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B5ED2851E2BAC3A00A64ED3 /* SystemConfiguration.framework */; };
 		9BD76C5B1E2AB39300EAD307 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD76C5A1E2AB39300EAD307 /* libstdc++.tbd */; };
 		B63FC526AE1D490089DDA878 /* libCodePush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3710797785DB443189E5A83D /* libCodePush.a */; };
 		E39381B83C4B4E4386ECFC58 /* libA0RNLock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 726BE65283684C1DACB24190 /* libA0RNLock.a */; };
@@ -215,6 +219,13 @@
 			remoteGlobalIDString = 58B5119B1A9E6C1200147676;
 			remoteInfo = RCTText;
 		};
+		9B5ED29D1E2BAC9800A64ED3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D4331B047DB24652BA646E6E /* RCTGoogleAnalyticsBridge.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A79185C61C30694E001236A6;
+			remoteInfo = RCTGoogleAnalyticsBridge;
+		};
 		9BD76C791E2B541E00EAD307 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B258D1FDB4EE47C4B5502DB9 /* A0RNLock.xcodeproj */;
@@ -253,6 +264,7 @@
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		1EDCBB963F76EDAB8DA255FA /* libPods-BreezeXTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BreezeXTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2477E9A913D2E1A983246A3F /* Pods-BreezeXTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreezeXTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BreezeXTests/Pods-BreezeXTests.debug.xcconfig"; sourceTree = "<group>"; };
+		28CEC424882C4D82B3BC291D /* libRCTGoogleAnalyticsBridge.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTGoogleAnalyticsBridge.a; sourceTree = "<group>"; };
 		355A656EA53A4B0092014B45 /* libz.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		3710797785DB443189E5A83D /* libCodePush.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libCodePush.a; sourceTree = "<group>"; };
 		3DF2FDDEE7745723FDEEAB27 /* libPods-BreezeX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BreezeX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -262,12 +274,16 @@
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		8B640E47132FE6A6FE1E7744 /* Pods-BreezeX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreezeX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BreezeX/Pods-BreezeX.debug.xcconfig"; sourceTree = "<group>"; };
+		9B5ED2661E2BAC2300A64ED3 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		9B5ED2831E2BAC3200A64ED3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		9B5ED2851E2BAC3A00A64ED3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9BD76C581E2AB36B00EAD307 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		9BD76C5A1E2AB39300EAD307 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		9BDFDC261E2A33D700B73E48 /* BreezeX.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = BreezeX.entitlements; path = BreezeX/BreezeX.entitlements; sourceTree = "<group>"; };
 		B1ABA0B77C47422283590BDD /* CodePush.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = CodePush.xcodeproj; path = "../node_modules/react-native-code-push/ios/CodePush.xcodeproj"; sourceTree = "<group>"; };
 		B1D6A07EACCF765F352694D8 /* Pods-BreezeXTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreezeXTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BreezeXTests/Pods-BreezeXTests.release.xcconfig"; sourceTree = "<group>"; };
 		B258D1FDB4EE47C4B5502DB9 /* A0RNLock.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = A0RNLock.xcodeproj; path = "../node_modules/react-native-lock/ios/A0RNLock.xcodeproj"; sourceTree = "<group>"; };
+		D4331B047DB24652BA646E6E /* RCTGoogleAnalyticsBridge.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTGoogleAnalyticsBridge.xcodeproj; path = "../node_modules/react-native-google-analytics-bridge/ios/RCTGoogleAnalyticsBridge/RCTGoogleAnalyticsBridge.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,6 +300,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B5ED2861E2BAC3A00A64ED3 /* SystemConfiguration.framework in Frameworks */,
+				9B5ED2841E2BAC3200A64ED3 /* CoreData.framework in Frameworks */,
+				9B5ED2671E2BAC2300A64ED3 /* libsqlite3.0.tbd in Frameworks */,
 				9BD76C5B1E2AB39300EAD307 /* libstdc++.tbd in Frameworks */,
 				5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
@@ -300,6 +319,7 @@
 				2EB24E9976C84E2E9987F7AE /* libz.tbd in Frameworks */,
 				5F2D06EBE1265575011450E6 /* libPods-BreezeX.a in Frameworks */,
 				E39381B83C4B4E4386ECFC58 /* libA0RNLock.a in Frameworks */,
+				0FDF146139FB49DDA1BC0730 /* libRCTGoogleAnalyticsBridge.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +445,9 @@
 		6FBC7AE183454551AE867D24 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9B5ED2851E2BAC3A00A64ED3 /* SystemConfiguration.framework */,
+				9B5ED2831E2BAC3200A64ED3 /* CoreData.framework */,
+				9B5ED2661E2BAC2300A64ED3 /* libsqlite3.0.tbd */,
 				9BD76C5A1E2AB39300EAD307 /* libstdc++.tbd */,
 				9BD76C581E2AB36B00EAD307 /* libstdc++.6.0.9.tbd */,
 				355A656EA53A4B0092014B45 /* libz.tbd */,
@@ -459,6 +482,7 @@
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				B1ABA0B77C47422283590BDD /* CodePush.xcodeproj */,
 				B258D1FDB4EE47C4B5502DB9 /* A0RNLock.xcodeproj */,
+				D4331B047DB24652BA646E6E /* RCTGoogleAnalyticsBridge.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -491,6 +515,14 @@
 			children = (
 				13B07F961A680F5B00A75B9A /* BreezeX.app */,
 				00E356EE1AD99517003FC87E /* BreezeXTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9B5ED2941E2BAC9800A64ED3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9B5ED29E1E2BAC9800A64ED3 /* libRCTGoogleAnalyticsBridge.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -625,6 +657,10 @@
 				{
 					ProductGroup = 00C302B61ABCB90400DB3ED1 /* Products */;
 					ProjectRef = 00C302B51ABCB90400DB3ED1 /* RCTGeolocation.xcodeproj */;
+				},
+				{
+					ProductGroup = 9B5ED2941E2BAC9800A64ED3 /* Products */;
+					ProjectRef = D4331B047DB24652BA646E6E /* RCTGoogleAnalyticsBridge.xcodeproj */;
 				},
 				{
 					ProductGroup = 00C302BC1ABCB91800DB3ED1 /* Products */;
@@ -843,6 +879,13 @@
 			remoteRef = 832341B41AAA6A8300B99B32 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		9B5ED29E1E2BAC9800A64ED3 /* libRCTGoogleAnalyticsBridge.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRCTGoogleAnalyticsBridge.a;
+			remoteRef = 9B5ED29D1E2BAC9800A64ED3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		9BD76C7A1E2B541E00EAD307 /* libA0RNLock.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1042,6 +1085,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1064,6 +1108,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
