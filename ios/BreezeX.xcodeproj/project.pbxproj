@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -27,7 +28,6 @@
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		9A96EB3D1E746746E6677BEC /* libPods-BreezeXTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EDCBB963F76EDAB8DA255FA /* libPods-BreezeXTests.a */; };
 		9BD76C5B1E2AB39300EAD307 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD76C5A1E2AB39300EAD307 /* libstdc++.tbd */; };
-		9BD76C5D1E2AB71B00EAD307 /* img in Resources */ = {isa = PBXBuildFile; fileRef = 9BD76C5C1E2AB71B00EAD307 /* img */; };
 		B63FC526AE1D490089DDA878 /* libCodePush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3710797785DB443189E5A83D /* libCodePush.a */; };
 		E39381B83C4B4E4386ECFC58 /* libA0RNLock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 726BE65283684C1DACB24190 /* libA0RNLock.a */; };
 /* End PBXBuildFile section */
@@ -215,6 +215,13 @@
 			remoteGlobalIDString = 58B5119B1A9E6C1200147676;
 			remoteInfo = RCTText;
 		};
+		9BD76C791E2B541E00EAD307 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B258D1FDB4EE47C4B5502DB9 /* A0RNLock.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5F0499EE1CAE9F4A006F6C05;
+			remoteInfo = A0RNLock;
+		};
 		9BDFDC0B1E2A28CE00B73E48 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B1ABA0B77C47422283590BDD /* CodePush.xcodeproj */;
@@ -251,17 +258,16 @@
 		3DF2FDDEE7745723FDEEAB27 /* libPods-BreezeX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BreezeX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		6D36536C4E3F2284A95DC98B /* Pods-BreezeX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreezeX.release.xcconfig"; path = "Pods/Target Support Files/Pods-BreezeX/Pods-BreezeX.release.xcconfig"; sourceTree = "<group>"; };
+		726BE65283684C1DACB24190 /* libA0RNLock.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libA0RNLock.a; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		8B640E47132FE6A6FE1E7744 /* Pods-BreezeX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreezeX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BreezeX/Pods-BreezeX.debug.xcconfig"; sourceTree = "<group>"; };
 		9BD76C581E2AB36B00EAD307 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		9BD76C5A1E2AB39300EAD307 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
-		9BD76C5C1E2AB71B00EAD307 /* img */ = {isa = PBXFileReference; lastKnownFileType = folder; name = img; path = ../img; sourceTree = "<group>"; };
 		9BDFDC261E2A33D700B73E48 /* BreezeX.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = BreezeX.entitlements; path = BreezeX/BreezeX.entitlements; sourceTree = "<group>"; };
 		B1ABA0B77C47422283590BDD /* CodePush.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = CodePush.xcodeproj; path = "../node_modules/react-native-code-push/ios/CodePush.xcodeproj"; sourceTree = "<group>"; };
 		B1D6A07EACCF765F352694D8 /* Pods-BreezeXTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreezeXTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BreezeXTests/Pods-BreezeXTests.release.xcconfig"; sourceTree = "<group>"; };
-		B258D1FDB4EE47C4B5502DB9 /* A0RNLock.xcodeproj */ = {isa = PBXFileReference; name = "A0RNLock.xcodeproj"; path = "../node_modules/react-native-lock/ios/A0RNLock.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		726BE65283684C1DACB24190 /* libA0RNLock.a */ = {isa = PBXFileReference; name = "libA0RNLock.a"; path = "libA0RNLock.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		B258D1FDB4EE47C4B5502DB9 /* A0RNLock.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = A0RNLock.xcodeproj; path = "../node_modules/react-native-lock/ios/A0RNLock.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -380,7 +386,6 @@
 		13B07FAE1A68108700A75B9A /* BreezeX */ = {
 			isa = PBXGroup;
 			children = (
-				9BD76C5C1E2AB71B00EAD307 /* img */,
 				9BDFDC261E2A33D700B73E48 /* BreezeX.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -490,6 +495,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		9BD76C761E2B541E00EAD307 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9BD76C7A1E2B541E00EAD307 /* libA0RNLock.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		9BDFDC081E2A28CE00B73E48 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -593,6 +606,10 @@
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
+				{
+					ProductGroup = 9BD76C761E2B541E00EAD307 /* Products */;
+					ProjectRef = B258D1FDB4EE47C4B5502DB9 /* A0RNLock.xcodeproj */;
+				},
 				{
 					ProductGroup = 9BDFDC081E2A28CE00B73E48 /* Products */;
 					ProjectRef = B1ABA0B77C47422283590BDD /* CodePush.xcodeproj */;
@@ -826,6 +843,13 @@
 			remoteRef = 832341B41AAA6A8300B99B32 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		9BD76C7A1E2B541E00EAD307 /* libA0RNLock.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libA0RNLock.a;
+			remoteRef = 9BD76C791E2B541E00EAD307 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		9BDFDC0C1E2A28CE00B73E48 /* libCodePush.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -847,7 +871,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BD76C5D1E2AB71B00EAD307 /* img in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 			);
