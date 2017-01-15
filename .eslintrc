@@ -1,0 +1,29 @@
+{
+    "extends": "airbnb",
+
+    "parser": "babel-eslint",
+
+    "parserOptions": {
+       "ecmaFeatures": {
+        "experimentalObjectRestSpread": true
+      }
+     },
+
+    "rules": {
+      "comma-dangle": [
+        "error",
+        "only-multiline"
+      ],
+      "react/prop-types": [
+          "off"
+      ],
+      "react/prefer-stateless-function": [
+          "warn"
+      ],
+      "react/jsx-filename-extension": [
+        1, { "extensions": [".js", ".jsx"] }
+      ],
+      "no-unused-expressions": 0,
+      "no-underscore-dangle": 0
+    }
+}
