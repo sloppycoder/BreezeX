@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import tracker from '../analytics';
 
 import {
   StyleSheet,
@@ -58,6 +59,11 @@ export default class DashboardScreen extends Component {
     this.props.navigator.pop();
   }
 
+  componentDidMount() {
+    console.log('track screen view dashboard');
+    tracker.trackScreenView('dashboard');
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -65,14 +71,14 @@ export default class DashboardScreen extends Component {
           <Image
             style={styles.avatar}
             source={{ uri: this.props.profile.picture }}
-          />
+            />
           <Text style={styles.title}>Welcome {this.props.profile.name}</Text>
         </View>
         <TouchableHighlight
           style={styles.callLogoutButton}
           underlayColor="#949494"
           onPress={this._onCallLogout}
-        >
+          >
           <Text>Logout</Text>
         </TouchableHighlight>
       </View>

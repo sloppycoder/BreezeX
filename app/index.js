@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
+import codePush from 'react-native-code-push';
 
 import {
   createRouter,
   NavigationProvider,
-  StackNavigation,
+  StackNavigation
 } from '@exponent/ex-navigation';
-
-import codePush from 'react-native-code-push';
 
 import LoginScreen from './components/login-screen';
 import DashboardScreen from './components/dashboard-screen';
 
-const Router = createRouter(() => ({
+const router = createRouter(() => ({
   login: () => LoginScreen,
   dashboard: () => DashboardScreen,
 }));
@@ -19,8 +18,8 @@ const Router = createRouter(() => ({
 class App extends Component {
   render() {
     return (
-      <NavigationProvider router={Router}>
-        <StackNavigation initialRoute={Router.getRoute('login')} />
+      <NavigationProvider router={router}>
+        <StackNavigation initialRoute={router.getRoute('login')} />
       </NavigationProvider>
     );
   }

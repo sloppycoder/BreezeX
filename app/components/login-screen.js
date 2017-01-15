@@ -10,6 +10,7 @@ import {
 
 import Auth0Lock from 'react-native-lock';
 import env from '../config/environment';
+import tracker from '../analytics';
 
 const styles = StyleSheet.create({
   container: {
@@ -63,14 +64,19 @@ export default class LoginScreen extends Component {
         return;
       }
       AsyncStorage.multiSet([
-          ['AUTH0-PROFILE', JSON.stringify(profile)],
-          ['AUTH0-TOKEN', JSON.stringify(token)]
+        ['AUTH0-PROFILE', JSON.stringify(profile)],
+        ['AUTH0-TOKEN', JSON.stringify(token)]
       ])
         .then(
-          () => this.props.navigator.push('dashboard', { profile, token }),
-          () => console.log('cannot storage token to storage!')
+        () => this.props.navigator.push('dashboard', { profile, token }),
+        () => console.log('cannot storage token to storage!')
         );
     });
+  }
+
+  componentDidMount() {
+    console.log('track screen view login');
+    tracker.trackScreenView('login');
   }
 
   render() {
@@ -84,7 +90,7 @@ export default class LoginScreen extends Component {
           style={styles.signInButton}
           underlayColor="#949494"
           onPress={this._onLogin}
-        >
+          >
           <Text>Log In</Text>
         </TouchableHighlight>
       </View>
