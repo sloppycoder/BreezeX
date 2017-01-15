@@ -5,6 +5,7 @@ import {
   Text,
   View,
   TouchableHighlight,
+  AsyncStorage
 } from 'react-native';
 
 import Auth0Lock from 'react-native-lock';
@@ -61,7 +62,14 @@ export default class LoginScreen extends Component {
         console.log(err);
         return;
       }
-      this.props.navigator.push('dashboard', { profile, token });
+      AsyncStorage.multiSet([
+          ['AUTH0-PROFILE', JSON.stringify(profile)],
+          ['AUTH0-TOKEN', JSON.stringify(token)]
+      ])
+        .then(
+          () => this.props.navigator.push('dashboard', { profile, token }),
+          () => console.log('cannot storage token to storage!')
+        );
     });
   }
 
@@ -82,5 +90,4 @@ export default class LoginScreen extends Component {
       </View>
     );
   }
-
 }
