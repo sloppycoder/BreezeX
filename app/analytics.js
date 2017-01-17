@@ -6,7 +6,7 @@ import {
 import env from './config/environment';
 
 GoogleAnalyticsSettings.setDispatchInterval(30);
-GoogleAnalyticsSettings.setDryRun(true);
+GoogleAnalyticsSettings.setDryRun(false);
 
 const navigationStateKey = 'navigation';
 
