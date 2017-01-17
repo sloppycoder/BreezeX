@@ -47,6 +47,17 @@
 				<key>NSExceptionAllowsInsecureHTTPLoads</key>
 				<true/>
 			</dict>
+			<key>ssl.google-analytics.com</key>
+	        <dict>
+	            <key>NSRequiresCertificateTransparency</key>
+	            <true/>
+	            <key>NSThirdPartyExceptionMinimumTLSVersion</key>
+	            <string>TLSv1.2</string>
+	            <key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+	            <false/>
+	            <key>NSThirdPartyExceptionAllowsInsecureHTTPLoads</key>
+	            <true/>
+	        </dict>
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
