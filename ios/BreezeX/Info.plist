@@ -19,7 +19,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>2</string>
+	<string>3</string>
 	<key>CodePushDeploymentKey</key>
 	<string>RWpbuJCIMycGIQXCSfH_7Ahfw8_p4kPQJ17LM</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
@@ -48,16 +48,16 @@
 				<true/>
 			</dict>
 			<key>ssl.google-analytics.com</key>
-	        <dict>
-	            <key>NSRequiresCertificateTransparency</key>
-	            <true/>
-	            <key>NSThirdPartyExceptionMinimumTLSVersion</key>
-	            <string>TLSv1.2</string>
-	            <key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
-	            <false/>
-	            <key>NSThirdPartyExceptionAllowsInsecureHTTPLoads</key>
-	            <true/>
-	        </dict>
+			<dict>
+				<key>NSRequiresCertificateTransparency</key>
+				<true/>
+				<key>NSThirdPartyExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSThirdPartyExceptionMinimumTLSVersion</key>
+				<string>TLSv1.2</string>
+				<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+				<false/>
+			</dict>
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
