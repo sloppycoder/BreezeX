@@ -9,7 +9,16 @@ GoogleAnalyticsSettings.setDispatchInterval(30);
 GoogleAnalyticsSettings.setDryRun(true);
 
 const navigationStateKey = 'navigation';
-const tracker = new GoogleAnalyticsTracker(env.GA_TRACKING_ID);
+
+class AnalyticsTracker {
+  constructor() {
+    this._tracker = new GoogleAnalyticsTracker(env.GA_TRACKING_ID);
+  }
+
+  get instance() {
+    return this._tracker;
+  }
+}
 
 // gets the current screen from navigation state
 function getCurrentScreen(getStateFn) {
@@ -31,9 +40,10 @@ const screenTracking = ({ getState }) => next => (action) => {
   const result = next(action);
   const nextScreen = getCurrentScreen(getState);
   if (nextScreen !== currentScreen) {
-    tracker.screenView(nextScreen);
+    AnalyticsTracker.tracker.screenView(nextScreen);
   }
   return result;
 };
 
-export default screenTracking;
+export { screenTracking };
+export default new AnalyticsTracker();

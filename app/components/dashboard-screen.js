@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import tracker from '../analytics';
-
 import {
   StyleSheet,
   Text,
@@ -8,6 +6,8 @@ import {
   Image,
   TouchableHighlight
 } from 'react-native';
+
+import tracker from '../analytics';
 
 const styles = StyleSheet.create({
   container: {
@@ -61,7 +61,8 @@ export default class DashboardScreen extends Component {
 
   componentDidMount() {
     console.log('track screen view dashboard');
-    tracker.trackScreenView('dashboard');
+    console.log(tracker.instance);
+    tracker.instance.trackScreenView('dashboard');
   }
 
   render() {

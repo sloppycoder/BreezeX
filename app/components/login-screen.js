@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import {
   StyleSheet,
   Text,
@@ -7,8 +6,8 @@ import {
   TouchableHighlight,
   AsyncStorage
 } from 'react-native';
-
 import Auth0Lock from 'react-native-lock';
+
 import env from '../config/environment';
 import tracker from '../analytics';
 
@@ -76,7 +75,9 @@ export default class LoginScreen extends Component {
 
   componentDidMount() {
     console.log('track screen view login');
-    tracker.trackScreenView('login');
+    console.log(tracker.instance);
+
+    tracker.instance.trackScreenView('login');
   }
 
   render() {
