@@ -47,50 +47,34 @@ const styles = StyleSheet.create({
   },
 });
 
-export default class DashboardScreen extends Component {
+export default class AccountHistoryScreen extends Component {
   static route = {
     navigationBar: {
-      title: 'Dashboard',
+      title: 'Account History',
     }
   }
 
   componentDidMount() {
-    console.log('track screen view dashboard');
-    tracker.instance.trackScreenView('dashboard');
+    console.log('track screen view account');
+    tracker.instance.trackScreenView('account');
   }
 
-  _onCallLogout = () => {
-    console.log('logout not implemented yet');
-    this.props.navigator.pop();
-  }
-
-  _onCallAccountHistory = () => {
-    this.props.navigator.push('account');
+  _onCallTransactionDetail = () => {
+    this.props.navigator.push('transaction');
   }
 
   render() {
     return (
       <View style={styles.container}>
         <View style={styles.messageBox}>
-          <Image
-            style={styles.avatar}
-            source={{ uri: this.props.profile.picture }}
-            />
-          <Text style={styles.title}>Welcome {this.props.profile.name}</Text>
+          <Text style={styles.title}>Place holder for account history</Text>
         </View>
         <TouchableHighlight
           style={styles.callLogoutButton}
           underlayColor="#949494"
-          onPress={this._onCallAccountHistory}
+          onPress={this._onCallTransactionDetail}
           >
-          <Text>Account History</Text>
-        </TouchableHighlight>
-        <TouchableHighlight
-          style={styles.callLogoutButton}
-          underlayColor="#949494"
-          onPress={this._onCallLogout}
-          >
-          <Text>Logout</Text>
+          <Text>Transaction Detail</Text>
         </TouchableHighlight>
       </View>
     );

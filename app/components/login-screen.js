@@ -75,8 +75,6 @@ export default class LoginScreen extends Component {
 
   componentDidMount() {
     console.log('track screen view login');
-    console.log(tracker.instance);
-
     tracker.instance.trackScreenView('login');
   }
 
