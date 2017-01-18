@@ -6,7 +6,7 @@ import {
 } from 'react-native';
 
 import styles from '../styles';
-import tracker from '../analytics';
+import { tracker } from '../analytics';
 
 export default class AccountHistoryScreen extends Component {
   static route = {
@@ -17,7 +17,7 @@ export default class AccountHistoryScreen extends Component {
 
   componentDidMount() {
     console.log('track screen view account');
-    tracker.instance.trackScreenView('account');
+    tracker.trackScreenView('account');
   }
 
   render() {

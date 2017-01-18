@@ -9,8 +9,7 @@ import Auth0Lock from 'react-native-lock';
 
 import env from '../config/environment';
 import styles from '../styles';
-import tracker from '../analytics';
-
+import { tracker } from '../analytics';
 
 const lock = new Auth0Lock({ clientId: env.AUTH0_CLIENT_ID, domain: env.AUTH0_DOMAIN });
 
@@ -18,7 +17,7 @@ export default class LoginScreen extends Component {
 
   componentDidMount() {
     console.log('track screen view login');
-    tracker.instance.trackScreenView('login');
+    tracker.trackScreenView('login');
   }
 
   _onLogin = () => {

@@ -5,7 +5,7 @@ import {
 } from 'react-native';
 
 import styles from '../styles';
-import tracker from '../analytics';
+import { tracker } from '../analytics';
 
 export default class TransactionDetailScreen extends Component {
   static route = {
@@ -16,7 +16,7 @@ export default class TransactionDetailScreen extends Component {
 
   componentDidMount() {
     console.log('track screen view transaction');
-    tracker.instance.trackScreenView('transaction');
+    tracker.trackScreenView('transaction');
   }
 
   render() {

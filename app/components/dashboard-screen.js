@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 
 import styles from '../styles';
-import tracker from '../analytics';
+import { tracker } from '../analytics';
 
 export default class DashboardScreen extends Component {
   static route = {
@@ -18,7 +18,7 @@ export default class DashboardScreen extends Component {
 
   componentDidMount() {
     console.log('track screen view dashboard');
-    tracker.instance.trackScreenView('dashboard');
+    tracker.trackScreenView('dashboard');
   }
 
   render() {
