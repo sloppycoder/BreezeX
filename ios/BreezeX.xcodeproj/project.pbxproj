@@ -1177,9 +1177,10 @@
 					"$(inherited)",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.vino9.app.BreezeX;
 				PRODUCT_NAME = BreezeX;
-				PROVISIONING_PROFILE = "49b89a42-5dd8-488b-b04a-0769de196137";
-				PROVISIONING_PROFILE_SPECIFIER = BreezeX;
+				PROVISIONING_PROFILE = "2228fe59-2dd0-45df-b3a1-dd1c12b71725";
+				PROVISIONING_PROFILE_SPECIFIER = net.vino9.app.BreezeX;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1205,9 +1206,10 @@
 					"$(inherited)",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.vino9.app.BreezeX;
 				PRODUCT_NAME = BreezeX;
-				PROVISIONING_PROFILE = "49b89a42-5dd8-488b-b04a-0769de196137";
-				PROVISIONING_PROFILE_SPECIFIER = BreezeX;
+				PROVISIONING_PROFILE = "2228fe59-2dd0-45df-b3a1-dd1c12b71725";
+				PROVISIONING_PROFILE_SPECIFIER = net.vino9.app.BreezeX;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
