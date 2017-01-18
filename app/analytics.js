@@ -1,3 +1,4 @@
+import DeviceInfo from 'react-native-device-info';
 import {
     GoogleAnalyticsTracker,
     GoogleAnalyticsSettings
@@ -6,7 +7,7 @@ import {
 import env from './config/environment';
 
 GoogleAnalyticsSettings.setDispatchInterval(30);
-GoogleAnalyticsSettings.setDryRun(false);
+GoogleAnalyticsSettings.setDryRun(DeviceInfo.isEmulator());
 
 const navigationStateKey = 'navigation';
 

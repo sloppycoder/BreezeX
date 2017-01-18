@@ -3622,6 +3622,10 @@ react-native-code-push@^1.16.1-beta:
     inquirer "1.1.2"
     plist "1.2.0"
 
+react-native-device-info@^0.9.7:
+  version "0.9.7"
+  resolved "https://registry.yarnpkg.com/react-native-device-info/-/react-native-device-info-0.9.7.tgz#e4b35d60bbf73472beb30de3d2b96de15a51b75d"
+
 react-native-dismiss-keyboard@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/react-native-dismiss-keyboard/-/react-native-dismiss-keyboard-1.0.0.tgz#32886242b3f2317e121f3aeb9b0a585e2b879b49"
