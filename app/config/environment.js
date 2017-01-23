@@ -3,6 +3,7 @@ const ENV = {
   AUTH0_DOMAIN: 'vino9.auth0.com',
   GA_TRACKING_ID: 'UA-90336890-1',
   GA_DISPATCH_INTERVAL: 30, // interval for upload analytics data to server.
+  API_URL: 'https://www.vino9.net/breezex'
 };
 
 if (process.env.NODE_ENV === 'development') {
@@ -10,7 +11,7 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 if (process.env.NODE_ENV === 'test') {
-  // ENV.blah = 'none';
+  // ENV.API_URL = 'https://www.vino9.net/breezex';
 }
 
 export default ENV;
