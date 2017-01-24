@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import {
+  Alert,
   Text,
   View,
   TouchableHighlight,
   AsyncStorage
 } from 'react-native';
 import Auth0Lock from 'react-native-lock';
+import DeviceInfo from 'react-native-device-info';
+import PushNotification from 'react-native-push-notification';
 
 import env from '../config/environment';
 import styles from '../styles';
@@ -13,9 +16,56 @@ import { tracker } from '../analytics';
 
 const lock = new Auth0Lock({ clientId: env.AUTH0_CLIENT_ID, domain: env.AUTH0_DOMAIN });
 
-export default class LoginScreen extends Component {
+const registerDevice = (accessToken, deviceToken) => {
+  fetch(`${env.API_URL}/device_registration`, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+      'Content-Type': 'application/json',
+      Accept: 'applicaiton/json'
+    },
+    body: JSON.stringify({
+      device_registration: {
+        device_uuid: DeviceInfo.getUniqueID(),
+        token: deviceToken.token,
+        model: DeviceInfo.getModel(),
+        device_id: DeviceInfo.getDeviceId(),
+        sso: accessToken
+      }
+    })
+  })
+    .then(() => { console.log('registered device with server'); })
+    .catch(() => {
+      Alert.alert(
+        'Registration Failed',
+        'Unable to register this device with the server',
+        [
+          { text: 'OK' },
+        ]
+      );
+    });
+};
 
+export default class LoginScreen extends Component {
   componentDidMount() {
+    PushNotification.configure({
+      onRegister: (token) => {
+        console.log('registered for push notificaiton. device token is', token);
+        this.state = { token };
+      },
+      onNotification: (notification) => {
+        console.log('NOTIFICATION:', notification);
+      },
+      senderID: 'YOUR GCM SENDER ID',
+      permissions: {
+        alert: true,
+        badge: true,
+        sound: true
+      },
+      popInitialNotification: true,
+      requestPermissions: true,
+    });
+
     console.log('track screen view login');
     tracker.trackScreenView('login');
   }
@@ -28,6 +78,8 @@ export default class LoginScreen extends Component {
         console.log(err);
         return;
       }
+
+      registerDevice(token.idToken, this.state.token);
 
       AsyncStorage.multiSet([
         ['AUTH0-PROFILE', JSON.stringify(profile)],
@@ -51,7 +103,7 @@ export default class LoginScreen extends Component {
           style={styles.navButton}
           underlayColor="#949494"
           onPress={this._onLogin}
-        >
+          >
           <Text>Log In</Text>
         </TouchableHighlight>
       </View>

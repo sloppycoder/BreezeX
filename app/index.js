@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import codePush from 'react-native-code-push';
-
 import {
   createRouter,
   NavigationProvider,
@@ -11,7 +10,6 @@ import LoginScreen from './components/login-screen';
 import DashboardScreen from './components/dashboard-screen';
 import AccountHistoryScreen from './components/account-history-screen';
 import TransactionDetailScreen from './components/transaction-detail-screen';
-
 
 const router = createRouter(() => ({
   login: () => LoginScreen,
