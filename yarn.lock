@@ -418,6 +418,12 @@ babel-plugin-check-es2015-constants@^6.5.0, babel-plugin-check-es2015-constants@
   dependencies:
     babel-runtime "^6.0.0"
 
+babel-plugin-dotenv@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/babel-plugin-dotenv/-/babel-plugin-dotenv-0.0.1.tgz#b4fadedfba9571c4fb495080ff02c34b22a7d3d5"
+  dependencies:
+    dotenv "^2.0.0"
+
 babel-plugin-external-helpers@^6.18.0:
   version "6.18.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-external-helpers/-/babel-plugin-external-helpers-6.18.0.tgz#c6bbf87a4448eb49616f24a8b8088503863488da"
@@ -1481,6 +1487,10 @@ doctrine@1.5.0, doctrine@^1.2.2:
 dom-walk@^0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/dom-walk/-/dom-walk-0.1.1.tgz#672226dc74c8f799ad35307df936aba11acd6018"
+
+dotenv@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-2.0.0.tgz#bd759c357aaa70365e01c96b7b0bec08a6e0d949"
 
 duplexer2@0.0.2:
   version "0.0.2"
@@ -3629,6 +3639,12 @@ react-native-device-info@^0.9.7:
 react-native-dismiss-keyboard@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/react-native-dismiss-keyboard/-/react-native-dismiss-keyboard-1.0.0.tgz#32886242b3f2317e121f3aeb9b0a585e2b879b49"
+
+react-native-dotenv@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/react-native-dotenv/-/react-native-dotenv-0.0.3.tgz#5caf47a30b9c797c679dda835d81ae2ce3c1cc11"
+  dependencies:
+    babel-plugin-dotenv "^0.0.1"
 
 react-native-drawer-layout@^1.0.0:
   version "1.1.0"

@@ -4,14 +4,13 @@ import {
     GoogleAnalyticsSettings
 } from 'react-native-google-analytics-bridge';
 
-import env from './config/environment';
+import { GA_TRACKING_ID, GA_DISPATCH_INTERVAL } from 'react-native-dotenv';
 
-GoogleAnalyticsSettings.setDispatchInterval(env.GA_DISPATCH_INTERVAL);
+GoogleAnalyticsSettings.setDispatchInterval(parseInt(GA_DISPATCH_INTERVAL, 10));
 GoogleAnalyticsSettings.setDryRun(DeviceInfo.isEmulator());
 
 const navigationStateKey = 'navigation';
-const tracker = new GoogleAnalyticsTracker(env.GA_TRACKING_ID);
-console.log('create new tracker');
+const tracker = new GoogleAnalyticsTracker(GA_TRACKING_ID);
 
 // gets the current screen from navigation state
 function getCurrentScreen(getStateFn) {

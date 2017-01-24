@@ -10,14 +10,14 @@ import Auth0Lock from 'react-native-lock';
 import DeviceInfo from 'react-native-device-info';
 import PushNotification from 'react-native-push-notification';
 
-import env from '../config/environment';
+import { AUTH0_CLIENT_ID, AUTH0_DOMAIN, API_URL } from 'react-native-dotenv';
 import styles from '../styles';
 import { tracker } from '../analytics';
 
-const lock = new Auth0Lock({ clientId: env.AUTH0_CLIENT_ID, domain: env.AUTH0_DOMAIN });
+const lock = new Auth0Lock({ clientId: AUTH0_CLIENT_ID, domain: AUTH0_DOMAIN });
 
 const registerDevice = (accessToken, deviceToken) => {
-  fetch(`${env.API_URL}/device_registration`, {
+  fetch(`${API_URL}/device_registration`, {
     method: 'POST',
     headers: {
       Authorization: `Bearer ${accessToken}`,
@@ -34,7 +34,7 @@ const registerDevice = (accessToken, deviceToken) => {
       }
     })
   })
-    .then(() => { console.log('registered device with server'); })
+    .then(() => { console.log('registered device with server at', API_URL); })
     .catch(() => {
       Alert.alert(
         'Registration Failed',
@@ -79,7 +79,9 @@ export default class LoginScreen extends Component {
         return;
       }
 
-      registerDevice(token.idToken, this.state.token);
+      // push notification registration does not work in simulator
+      // when running in simulator, this.state will be empty here.
+      registerDevice(token.idToken, this.state ? this.state.token : 'none');
 
       AsyncStorage.multiSet([
         ['AUTH0-PROFILE', JSON.stringify(profile)],

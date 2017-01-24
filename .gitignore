@@ -53,7 +53,7 @@ fastlane/Preview.html
 fastlane/screenshots
 
 # dotenv
-.env
+.env*
 
 #
 ios/pods
