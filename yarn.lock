@@ -3647,6 +3647,10 @@ react-native-lock@^0.4.0:
   dependencies:
     react-native-auth0 "^0.0.1"
 
+react-native-push-notification@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/react-native-push-notification/-/react-native-push-notification-2.2.1.tgz#9b392cee8f5223a1e1772c9a88c95742549fcfc3"
+
 react-native-tab-view@0.0.42:
   version "0.0.42"
   resolved "https://registry.yarnpkg.com/react-native-tab-view/-/react-native-tab-view-0.0.42.tgz#abaeda8e7ab856db98c09709d3d82d2a08b94564"
