@@ -56,7 +56,6 @@ export default class LoginScreen extends Component {
         console.log(err);
         return;
       }
-      console.log(token.idToken);
       registerDevice(token.idToken);
 
       AsyncStorage.multiSet([
@@ -81,7 +80,7 @@ export default class LoginScreen extends Component {
           style={styles.navButton}
           underlayColor="#949494"
           onPress={this._onLogin}
-          >
+        >
           <Text>Log In</Text>
         </TouchableHighlight>
       </View >
