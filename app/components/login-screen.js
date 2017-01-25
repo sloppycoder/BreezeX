@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {
   Alert,
+  Image,
   Text,
   View,
   TouchableHighlight,
@@ -12,6 +13,7 @@ import PushNotification from 'react-native-push-notification';
 
 import { AUTH0_CLIENT_ID, AUTH0_DOMAIN, API_URL } from 'react-native-dotenv';
 import styles from '../styles';
+import badge from '../images/badge.png';
 
 const lock = new Auth0Lock({ clientId: AUTH0_CLIENT_ID, domain: AUTH0_DOMAIN });
 
@@ -94,14 +96,18 @@ export default class LoginScreen extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.messageBox}>
-          <Text style={styles.title}>Fictional Bank</Text>
-          <Text style={styles.subtitle}>Where all your money belong</Text>
+          <Image
+            style={styles.badge}
+            source={badge}
+          />
+          <Text style={styles.title}>Geek Bank</Text>
+          <Text style={styles.subtitle}>we care about our code not your money!</Text>
         </View>
         <TouchableHighlight
           style={styles.navButton}
           underlayColor="#949494"
           onPress={this._onLogin}
-          >
+        >
           <Text>Log In</Text>
         </TouchableHighlight>
       </View>
