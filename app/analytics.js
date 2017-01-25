@@ -38,5 +38,5 @@ const screenTracking = ({ getState }) => next => (action) => {
   return result;
 };
 
-export { tracker };
-export default screenTracking;
+export { screenTracking };
+export default tracker;
