@@ -7,18 +7,12 @@ import {
 } from 'react-native';
 
 import styles from '../styles';
-import { tracker } from '../analytics';
 
 export default class DashboardScreen extends Component {
   static route = {
     navigationBar: {
       title: 'Dashboard',
     }
-  }
-
-  componentDidMount() {
-    console.log('track screen view dashboard');
-    tracker.trackScreenView('dashboard');
   }
 
   render() {

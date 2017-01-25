@@ -12,7 +12,6 @@ import PushNotification from 'react-native-push-notification';
 
 import { AUTH0_CLIENT_ID, AUTH0_DOMAIN, API_URL } from 'react-native-dotenv';
 import styles from '../styles';
-import { tracker } from '../analytics';
 
 const lock = new Auth0Lock({ clientId: AUTH0_CLIENT_ID, domain: AUTH0_DOMAIN });
 
@@ -65,9 +64,6 @@ export default class LoginScreen extends Component {
       popInitialNotification: true,
       requestPermissions: true,
     });
-
-    console.log('track screen view login');
-    tracker.trackScreenView('login');
   }
 
   _onLogin = () => {

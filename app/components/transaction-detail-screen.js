@@ -5,18 +5,12 @@ import {
 } from 'react-native';
 
 import styles from '../styles';
-import { tracker } from '../analytics';
 
 export default class TransactionDetailScreen extends Component {
   static route = {
     navigationBar: {
       title: 'Transaction Detail',
     }
-  }
-
-  componentDidMount() {
-    console.log('track screen view transaction');
-    tracker.trackScreenView('transaction');
   }
 
   render() {
