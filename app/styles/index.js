@@ -4,7 +4,7 @@ export default StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: '#15204C',
+    backgroundColor: '#727993',
   },
   messageBox: {
     flex: 1,
