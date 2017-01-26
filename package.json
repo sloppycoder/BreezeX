@@ -4,7 +4,10 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "jest",
+    "ios": "node_modules/.bin/react-native run-ios",
+    "droid": "node_modules/.bin/react-native run-android",
+    "lint": "node_modules/.bin/eslint app"
   },
   "dependencies": {
     "@exponent/ex-navigation": "^2.7.1",
