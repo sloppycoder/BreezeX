@@ -70,6 +70,7 @@ export default class LoginScreen extends Component {
 
   _onLogin = () => {
     lock.show({
+      connections: ['touchid'],
       closable: true,
     }, (err, profile, token) => {
       if (err) {
