@@ -1227,6 +1227,7 @@
 				PRODUCT_NAME = BreezeX;
 				PROVISIONING_PROFILE = "2228fe59-2dd0-45df-b3a1-dd1c12b71725";
 				PROVISIONING_PROFILE_SPECIFIER = net.vino9.app.BreezeX;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1257,6 +1258,7 @@
 				PRODUCT_NAME = BreezeX;
 				PROVISIONING_PROFILE = "2228fe59-2dd0-45df-b3a1-dd1c12b71725";
 				PROVISIONING_PROFILE_SPECIFIER = net.vino9.app.BreezeX;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
