@@ -32,7 +32,7 @@ const registerDevice = (accessToken, deviceToken) => {
     body: JSON.stringify({
       device_registration: {
         device_uuid: DeviceInfo.getUniqueID(),
-        token: deviceToken.token,
+        token: deviceToken,
         model: DeviceInfo.getModel(),
         device_id: DeviceInfo.getDeviceId(),
         platform: `${Platform.OS}/${Platform.Version}`
