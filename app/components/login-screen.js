@@ -5,7 +5,8 @@ import {
   Text,
   View,
   TouchableHighlight,
-  AsyncStorage
+  AsyncStorage,
+  Platform
 } from 'react-native';
 import Auth0Lock from 'react-native-lock';
 import DeviceInfo from 'react-native-device-info';
@@ -31,7 +32,7 @@ const registerDevice = (accessToken, deviceToken) => {
         token: deviceToken.token,
         model: DeviceInfo.getModel(),
         device_id: DeviceInfo.getDeviceId(),
-        sso: accessToken
+        platform: `${Platform.OS}/${Platform.Version}`
       }
     })
   })
