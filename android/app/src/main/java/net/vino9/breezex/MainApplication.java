@@ -1,4 +1,4 @@
-package com.breezex;
+package net.vino9.breezex;
 
 import android.app.Application;
 import android.util.Log;
@@ -22,6 +22,7 @@ public class MainApplication extends Application implements ReactApplication {
 
   private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
 
+    private static final String CODEPUSH_DEPLOYMENT_KEY = "RWpbuJCIMycGIQXCSfH_7Ahfw8_p4kPQJ17LM";
     @Override
     protected String getJSBundleFile() {
       return CodePush.getJSBundleFile();
@@ -40,7 +41,7 @@ public class MainApplication extends Application implements ReactApplication {
             new RNDeviceInfo(),
             new GoogleAnalyticsBridgePackage(),
             new LockReactPackage(),
-            new CodePush(null, getApplicationContext(), BuildConfig.DEBUG)
+            new CodePush(CODEPUSH_DEPLOYMENT_KEY, getApplicationContext(), BuildConfig.DEBUG)
       );
     }
   };

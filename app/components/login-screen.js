@@ -16,7 +16,10 @@ import { AUTH0_CLIENT_ID, AUTH0_DOMAIN, API_URL } from 'react-native-dotenv';
 import styles from '../styles';
 import badge from '../images/badge.png';
 
-const lock = new Auth0Lock({ clientId: AUTH0_CLIENT_ID, domain: AUTH0_DOMAIN });
+const lock = new Auth0Lock({
+  clientId: AUTH0_CLIENT_ID,
+  domain: AUTH0_DOMAIN,
+});
 
 const registerDevice = (accessToken, deviceToken) => {
   fetch(`${API_URL}/device_registration`, {
@@ -70,14 +73,17 @@ export default class LoginScreen extends Component {
   }
 
   _onLogin = () => {
-    lock.show({
-      connections: ['touchid'],
-      closable: true,
-    }, (err, profile, token) => {
+    let lockOptions = { closable: true };
+    if (Platform.OS === 'ios') {
+      lockOptions = { connections: ['touchid'], closable: true };
+    }
+    console.log('Lock Options', lockOptions);
+    lock.show(lockOptions, (err, profile, token) => {
       if (err) {
         console.log(err);
         return;
       }
+      console.log('Logged in');
 
       // push notification registration does not work in simulator
       // when running in simulator, this.state will be empty here.

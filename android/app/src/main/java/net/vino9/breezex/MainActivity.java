@@ -1,4 +1,4 @@
-package com.breezex;
+package net.vino9.breezex;
 
 import com.facebook.react.ReactActivity;
 
