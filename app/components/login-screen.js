@@ -5,7 +5,6 @@ import {
   Text,
   View,
   TouchableHighlight,
-  AsyncStorage,
   Platform
 } from 'react-native';
 import Auth0Lock from 'react-native-lock';
@@ -21,38 +20,13 @@ const lock = new Auth0Lock({
   domain: AUTH0_DOMAIN,
 });
 
-const registerDevice = (accessToken, deviceToken) => {
-  fetch(`${API_URL}/device_registration`, {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${accessToken}`,
-      'Content-Type': 'application/json',
-      Accept: 'applicaiton/json'
-    },
-    body: JSON.stringify({
-      device_registration: {
-        device_uuid: DeviceInfo.getUniqueID(),
-        token: deviceToken,
-        model: DeviceInfo.getModel(),
-        device_id: DeviceInfo.getDeviceId(),
-        platform: `${Platform.OS}/${Platform.Version}`
-      }
-    })
-  })
-    .then(() => { console.log('registered device with server at', API_URL); })
-    .catch(() => {
-      Alert.alert(
-        'Registration Failed',
-        'Unable to register this device with the server',
-        [
-          { text: 'OK' },
-        ]
-      );
-    });
-};
+let SSO_TOKEN = 'none';
+export { SSO_TOKEN };
 
 export default class LoginScreen extends Component {
   componentDidMount() {
+    console.log('API URL is', API_URL);
+
     PushNotification.configure({
       onRegister: (token) => {
         console.log('registered for push notificaiton. device token is', token);
@@ -72,7 +46,7 @@ export default class LoginScreen extends Component {
     });
   }
 
-  _onLogin = () => {
+  _onLogin = async () => {
     let lockOptions = { closable: true };
     if (Platform.OS === 'ios') {
       lockOptions = { connections: ['touchid'], closable: true };
@@ -83,20 +57,10 @@ export default class LoginScreen extends Component {
         console.log(err);
         return;
       }
-      console.log('Logged in');
+      SSO_TOKEN = token.idToken;
+      console.log('Logged in, got sso token', SSO_TOKEN);
 
-      // push notification registration does not work in simulator
-      // when running in simulator, this.state will be empty here.
-      registerDevice(token.idToken, this.state ? this.state.token : 'none');
-
-      AsyncStorage.multiSet([
-        ['AUTH0-PROFILE', JSON.stringify(profile)],
-        ['AUTH0-TOKEN', JSON.stringify(token)]
-      ])
-        .then(
-        () => this.props.navigator.push('dashboard', { profile, token }),
-        () => console.log('cannot storage token to storage!')
-        );
+      this.props.navigator.push('dashboard', { profile, token });
     });
   }
 
@@ -122,3 +86,4 @@ export default class LoginScreen extends Component {
     );
   }
 }
+
