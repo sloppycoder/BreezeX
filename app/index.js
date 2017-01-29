@@ -6,14 +6,14 @@ import {
   NavigationProvider,
   StackNavigation
 } from '@exponent/ex-navigation';
-import { Provider } from 'react-redux';
+import { ApolloProvider } from 'react-apollo';
 
 import LoginScreen from './components/login-screen';
 import DashboardScreen from './components/dashboard-screen';
 import AccountHistoryScreen from './components/account-history-screen';
 import TransactionDetailScreen from './components/transaction-detail-screen';
 
-import store from './store';
+import store, { client } from './store';
 
 const router = createRouter(() => ({
   login: () => LoginScreen,
@@ -27,11 +27,11 @@ const navigationContext = new NavigationContext({ router, store });
 class App extends Component {
   render() {
     return (
-      <Provider store={store}>
+      <ApolloProvider store={store} client={client}>
         <NavigationProvider context={navigationContext}>
           <StackNavigation initialRoute={router.getRoute('login')} />
         </NavigationProvider>
-      </Provider>
+      </ApolloProvider>
     );
   }
 }
