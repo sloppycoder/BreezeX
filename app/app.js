@@ -11,6 +11,7 @@ import AppWithNavigationState, { navReducer } from './helper/navigator';
 const logger = createLogger({
   level: 'log',
   diff: true,
+  predicate: (getState, action) => ['Navigate', 'Back'].indexOf(action.type) !== -1
 });
 
 const INIT_STATE = {
@@ -32,7 +33,8 @@ const store = createStore(
   }),
   applyMiddleware(
     client.middleware(),
-    logger,
+    screenTracking,
+    // logger,
     ),
 );
 
