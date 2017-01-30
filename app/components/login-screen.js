@@ -1,6 +1,7 @@
+/* eslint import/no-mutable-exports: 0 */
+
 import React, { Component } from 'react';
 import {
-  Alert,
   Image,
   Text,
   View,
@@ -8,7 +9,6 @@ import {
   Platform
 } from 'react-native';
 import Auth0Lock from 'react-native-lock';
-import DeviceInfo from 'react-native-device-info';
 import PushNotification from 'react-native-push-notification';
 
 import { AUTH0_CLIENT_ID, AUTH0_DOMAIN, API_URL } from 'react-native-dotenv';

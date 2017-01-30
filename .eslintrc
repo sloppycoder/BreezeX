@@ -27,6 +27,7 @@
         1, { "extensions": [".js", ".jsx"] }
       ],
       "no-unused-expressions": 0,
-      "no-underscore-dangle": 0
+      "no-underscore-dangle": 0,
+      "no-console": 0
     }
 }

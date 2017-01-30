@@ -1,3 +1,5 @@
+/* eslint no-param-reassign: ["error", { "props": false }]*/
+
 import ApolloClient, { createNetworkInterface } from 'apollo-client';
 import { API_URL } from 'react-native-dotenv';
 import { SSO_TOKEN } from '../components/login-screen';

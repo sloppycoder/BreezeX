@@ -1,3 +1,6 @@
+/* eslint no-unused-vars: ["error", { "varsIgnorePattern": "logger" }]*/
+/* eslint react/prefer-stateless-function: 0 */
+
 import React, { Component } from 'react';
 import { combineReducers, createStore, applyMiddleware } from 'redux';
 import createLogger from 'redux-logger';
