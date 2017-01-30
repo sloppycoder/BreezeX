@@ -1,5 +1,6 @@
 import { createNavigationEnabledStore, NavigationReducer } from '@exponent/ex-navigation';
 import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
+import createLogger from 'redux-logger';
 import ApolloClient, { createNetworkInterface } from 'apollo-client';
 import { API_URL } from 'react-native-dotenv';
 import { screenTracking } from './analytics';
@@ -30,15 +31,17 @@ const createStoreWithNavigation = createNavigationEnabledStore({
   navigationStateKey: 'navigation',
 });
 
+const logger = createLogger({
+  level: 'log',
+  diff: true,
+});
+
 const store = createStoreWithNavigation(
   combineReducers({
     navigation: NavigationReducer,
     apollo: client.reducer(),
   }),
-  compose(
-    applyMiddleware(screenTracking),
-    applyMiddleware(client.middleware())
-  )
+  applyMiddleware(screenTracking, client.middleware(), logger),
 );
 
 export { client };
