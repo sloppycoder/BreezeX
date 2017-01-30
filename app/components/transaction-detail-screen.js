@@ -7,11 +7,9 @@ import {
 import styles from '../styles';
 
 export default class TransactionDetailScreen extends Component {
-  static route = {
-    navigationBar: {
-      title: 'Transaction Detail',
-    }
-  }
+  static navigationOptions = {
+    title: 'Transaction Detail',
+  };
 
   render() {
     return (
@@ -22,6 +20,5 @@ export default class TransactionDetailScreen extends Component {
       </View>
     );
   }
-
 }
 

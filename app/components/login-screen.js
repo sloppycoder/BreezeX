@@ -24,6 +24,10 @@ let SSO_TOKEN = 'none';
 export { SSO_TOKEN };
 
 export default class LoginScreen extends Component {
+  static navigationOptions = {
+    title: 'Login',
+  };
+
   componentDidMount() {
     console.log('API URL is', API_URL);
 
@@ -46,12 +50,13 @@ export default class LoginScreen extends Component {
     });
   }
 
-  _onLogin = async () => {
+  onLogin = () => {
     let lockOptions = { closable: true };
+    // specificy 'touchid' on Android device will cause login to fail
     if (Platform.OS === 'ios') {
       lockOptions = { connections: ['touchid'], closable: true };
     }
-    console.log('Lock Options', lockOptions);
+
     lock.show(lockOptions, (err, profile, token) => {
       if (err) {
         console.log(err);
@@ -60,7 +65,7 @@ export default class LoginScreen extends Component {
       SSO_TOKEN = token.idToken;
       console.log('Logged in, got sso token', SSO_TOKEN);
 
-      this.props.navigator.push('dashboard', { profile, token });
+      this.props.navigation.navigate('dashboard', { profile });
     });
   }
 
@@ -78,7 +83,7 @@ export default class LoginScreen extends Component {
         <TouchableHighlight
           style={styles.navButton}
           underlayColor="#949494"
-          onPress={this._onLogin}
+          onPress={this.onLogin}
         >
           <Text>Log In</Text>
         </TouchableHighlight>

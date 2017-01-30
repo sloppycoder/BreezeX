@@ -10,7 +10,6 @@
     "lint": "node_modules/.bin/eslint app"
   },
   "dependencies": {
-    "@exponent/ex-navigation": "^2.7.1",
     "apollo-client": "^0.8.1",
     "babel-preset-react-native-stage-0": "^1.0.1",
     "graphql-tag": "^1.2.3",
@@ -23,6 +22,7 @@
     "react-native-google-analytics-bridge": "^5.0.0",
     "react-native-lock": "^0.4.0",
     "react-native-push-notification": "^2.2.1",
+    "react-navigation": "^1.0.0-beta.1",
     "react-redux": "^5.0.2",
     "redux": "^3.6.0",
     "redux-logger": "^2.7.4"

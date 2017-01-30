@@ -8,11 +8,9 @@ import {
 import styles from '../styles';
 
 export default class AccountHistoryScreen extends Component {
-  static route = {
-    navigationBar: {
-      title: 'Account History',
-    }
-  }
+  static navigationOptions = {
+    title: 'Account History',
+  };
 
   render() {
     return (
@@ -24,7 +22,7 @@ export default class AccountHistoryScreen extends Component {
           style={styles.navButton}
           underlayColor="#949494"
           onPress={
-            () => this.props.navigator.push('transaction')
+            () => this.props.navigation.navigate('transaction')
           }
         >
           <Text>Transaction Detail</Text>
@@ -32,6 +30,5 @@ export default class AccountHistoryScreen extends Component {
       </View>
     );
   }
-
 }
 

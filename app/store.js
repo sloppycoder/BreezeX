@@ -1,11 +1,22 @@
-import { createNavigationEnabledStore, NavigationReducer } from '@exponent/ex-navigation';
-import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
+import React, { Component } from 'react';
+import { combineReducers, createStore, applyMiddleware } from 'redux';
 import createLogger from 'redux-logger';
+import { StackNavigator, addNavigationHelpers } from 'react-navigation';
+import { ApolloProvider } from 'react-apollo';
 import ApolloClient, { createNetworkInterface } from 'apollo-client';
+import { connect } from 'react-redux';
+
 import { API_URL } from 'react-native-dotenv';
-import { screenTracking } from './analytics';
 import { SSO_TOKEN } from './components/login-screen';
 
+import { screenTracking } from './analytics';
+
+import LoginScreen from './components/login-screen';
+import DashboardScreen from './components/dashboard-screen';
+import AccountHistoryScreen from './components/account-history-screen';
+import TransactionDetailScreen from './components/transaction-detail-screen';
+
+// initialize the apollo client.
 const networkInterface = createNetworkInterface({
   uri: `${API_URL}/queries`,
 });
@@ -13,7 +24,7 @@ const networkInterface = createNetworkInterface({
 networkInterface.use([{
   applyMiddleware(req, next) {
     if (!req.options.headers) {
-      req.options.headers = {};  // Create the header object if needed.
+      req.options.headers = {};
     }
 
     console.log('sso_token is', SSO_TOKEN);
@@ -26,23 +37,53 @@ const client = new ApolloClient({
   networkInterface
 });
 
-const createStoreWithNavigation = createNavigationEnabledStore({
-  createStore,
-  navigationStateKey: 'navigation',
-});
-
+// logger for help debugging
 const logger = createLogger({
   level: 'log',
   diff: true,
 });
 
-const store = createStoreWithNavigation(
-  combineReducers({
-    navigation: NavigationReducer,
-    apollo: client.reducer(),
-  }),
-  applyMiddleware(screenTracking, client.middleware(), logger),
+const AppNavigator = StackNavigator(
+  {
+    dashboard: { screen: DashboardScreen },
+    account: { screen: AccountHistoryScreen },
+    transaction: { screen: TransactionDetailScreen },
+    login: { screen: LoginScreen },
+  },
+  {
+    initialRouteName: 'login'
+  }
 );
 
-export { client };
-export default store;
+const AppWithNavigationState = connect(state => ({
+  nav: state.nav,
+}))(({ dispatch, nav }) => (
+  <AppNavigator navigation={addNavigationHelpers({ dispatch, state: nav })} />
+));
+
+const store = createStore(
+  combineReducers({
+    apollo: client.reducer(),
+    nav: (state, action) => (
+      AppNavigator.router.getStateForAction(action, state)
+    ),
+  }),
+  applyMiddleware(
+    client.middleware(),
+    logger,
+    ),
+);
+
+class App extends Component {
+  render() {
+    return (
+      <ApolloProvider store={store} client={client}>
+        <AppWithNavigationState initialRouteName="login" />
+      </ApolloProvider>
+    );
+  }
+}
+
+
+export { store };
+export default App;

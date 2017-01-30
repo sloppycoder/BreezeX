@@ -34,13 +34,12 @@ const dashboardQuery = gql`
 }`;
 
 class DashboardScreen extends Component {
-  static route = {
-    navigationBar: {
-      title: 'Dashboard',
-    }
-  }
+  static navigationOptions = {
+    title: 'Dashboard',
+  };
 
   render() {
+    const { profile } = this.props.navigation.state.params;
     return this.props.data.loading ? (
       <Text>Loading...</Text>
     ) : (
@@ -48,7 +47,7 @@ class DashboardScreen extends Component {
         <View style={styles.messageBox}>
           <Image
             style={styles.avatar}
-            source={{ uri: this.props.profile.picture }}
+            source={{ uri: profile.picture }}
           />
           <Text style={styles.title}>Welcome {this.props.data.customer.name}</Text>
         </View>
@@ -58,7 +57,7 @@ class DashboardScreen extends Component {
             style={styles.navButton}
             underlayColor="#949494"
             onPress={
-              () => this.props.navigator.push('account')
+              () => this.props.navigation.navigate('account')
             }
           >
             <Text>{account.account_no} ${account.product_desc} ${account.bal}</Text>
@@ -68,7 +67,7 @@ class DashboardScreen extends Component {
           style={styles.navButton}
           underlayColor="#949494"
           onPress={
-            () => this.props.navigator.pop()
+            () => this.props.navigation.goBack()
           }
         >
           <Text>Logout</Text>
