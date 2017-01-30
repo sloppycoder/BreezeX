@@ -57,7 +57,7 @@ class DashboardScreen extends Component {
             style={styles.navButton}
             underlayColor="#949494"
             onPress={
-              () => this.props.navigation.navigate('account')
+              () => this.props.navigation.navigate('account', {account})
             }
           >
             <Text>{account.account_no} ${account.product_desc} ${account.bal}</Text>
