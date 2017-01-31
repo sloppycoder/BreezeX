@@ -12,7 +12,7 @@ import styles from '../styles';
 
 // We use the gql tag to parse our query string into a query document
 const dashboardQuery = gql`
-{
+query CustomerOverview {
   customer(id:1) {
     name,
     rel_id,
