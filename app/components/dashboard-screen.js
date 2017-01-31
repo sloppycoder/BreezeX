@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import {
+  Button,
   Text,
   View,
   Image,
@@ -36,6 +37,14 @@ query CustomerOverview {
 class DashboardScreen extends Component {
   static navigationOptions = {
     title: 'Dashboard',
+    header: ({ goBack }) => ({
+      right: (
+        <Button
+          title={'Logout'}
+          onPress={() => { goBack(null); }}
+        />
+      ),
+    }),
   };
 
   render() {
@@ -57,21 +66,12 @@ class DashboardScreen extends Component {
             style={styles.navButton}
             underlayColor="#949494"
             onPress={
-              () => this.props.navigation.navigate('account', {account})
+              () => this.props.navigation.navigate('account', { account })
             }
           >
             <Text>{account.account_no} ${account.product_desc} ${account.bal}</Text>
           </TouchableHighlight>
         ))}
-        <TouchableHighlight
-          style={styles.navButton}
-          underlayColor="#949494"
-          onPress={
-            () => this.props.navigation.goBack()
-          }
-        >
-          <Text>Logout</Text>
-        </TouchableHighlight>
       </View>
     );
   }
