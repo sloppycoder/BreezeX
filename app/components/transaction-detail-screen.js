@@ -12,10 +12,11 @@ export default class TransactionDetailScreen extends Component {
   };
 
   render() {
+    const { transaction } = this.props.navigation.state.params;
     return (
       <View style={styles.container}>
         <View style={styles.messageBox}>
-          <Text style={styles.title}>Place holder for transaction detail</Text>
+          <Text style={styles.title}>{transaction.memo}</Text>
         </View>
       </View>
     );
