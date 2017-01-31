@@ -25,7 +25,6 @@ const screenTracking = ({ getState }) => next => (action) => {
   const result = next(action);
   const nextScreen = getCurrentScreen(getState);
   if (nextScreen !== currentScreen) {
-    console.log('tracking middleware: ', nextScreen);
     tracker.trackScreenView(nextScreen);
   }
   return result;
