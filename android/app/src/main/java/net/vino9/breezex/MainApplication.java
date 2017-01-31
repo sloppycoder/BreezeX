@@ -22,7 +22,8 @@ public class MainApplication extends Application implements ReactApplication {
 
   private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
 
-    private static final String CODEPUSH_DEPLOYMENT_KEY = "RWpbuJCIMycGIQXCSfH_7Ahfw8_p4kPQJ17LM";
+    private static final String CODEPUSH_DEPLOYMENT_KEY = "thqI2jpfOroqd9Fc__jeUBEJb-KZ4kPQJ17LM";
+
     @Override
     protected String getJSBundleFile() {
       return CodePush.getJSBundleFile();
