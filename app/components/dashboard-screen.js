@@ -63,13 +63,12 @@ class DashboardScreen extends Component {
         { this.props.data.customer.casa_accounts.map(account => (
           <TouchableHighlight
             key={account.account_no}
-            style={styles.navButton}
-            underlayColor="#949494"
+            style={styles.listItem}
             onPress={
               () => this.props.navigation.navigate('account', { account })
             }
           >
-            <Text>{account.account_no} ${account.product_desc} ${account.bal}</Text>
+            <Text>{account.account_no} {account.product_desc} {account.currency} {account.bal}</Text>
           </TouchableHighlight>
         ))}
       </View>

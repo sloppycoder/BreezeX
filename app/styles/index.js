@@ -42,4 +42,13 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  listItem: {
+    height: 100,
+    alignSelf: 'stretch',
+    backgroundColor: '#ffffff',
+    margin:2,
+    borderRadius: 1,
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+  }
 });

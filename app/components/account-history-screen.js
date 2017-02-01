@@ -41,7 +41,7 @@ class AccountHistoryScreen extends Component {
         { this.props.data.casa_account.transactions.map(transaction => (
 
         <TouchableHighlight
-          style={styles.navButton}
+          style={styles.listItem}
           underlayColor="#949494"
           key={transaction.id}
           onPress={
