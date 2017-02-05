@@ -29,8 +29,6 @@ export default class LoginScreen extends Component {
   };
 
   componentDidMount() {
-    console.log('API URL is', API_URL);
-
     PushNotification.configure({
       onRegister: (token) => {
         console.log('registered for push notificaiton. device token is', token);
