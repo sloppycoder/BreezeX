@@ -11,13 +11,13 @@ import {
 import Auth0Lock from 'react-native-lock';
 import PushNotification from 'react-native-push-notification';
 
-import { AUTH0_CLIENT_ID, AUTH0_DOMAIN, API_URL } from 'react-native-dotenv';
+import env from '../config/environment';
 import styles from '../styles';
 import badge from '../images/badge.png';
 
 const lock = new Auth0Lock({
-  clientId: AUTH0_CLIENT_ID,
-  domain: AUTH0_DOMAIN,
+  clientId: env.AUTH0_CLIENT_ID,
+  domain: env.AUTH0_DOMAIN,
 });
 
 let SSO_TOKEN = 'none';
@@ -29,8 +29,6 @@ export default class LoginScreen extends Component {
   };
 
   componentDidMount() {
-    console.log('API URL is', API_URL);
-
     PushNotification.configure({
       onRegister: (token) => {
         console.log('registered for push notificaiton. device token is', token);

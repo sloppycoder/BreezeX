@@ -33,7 +33,6 @@ class AccountHistoryScreen extends Component {
   };
 
   render() {
-    console.log('AccountHistoryScreen.render', this.props.data);
     return this.props.data.loading ? (
       <Text>Loading...</Text>
     ) : (
