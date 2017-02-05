@@ -11,7 +11,7 @@ import {
 import Auth0Lock from 'react-native-lock';
 import PushNotification from 'react-native-push-notification';
 
-import { AUTH0_CLIENT_ID, AUTH0_DOMAIN, API_URL } from 'react-native-dotenv';
+import { AUTH0_CLIENT_ID, AUTH0_DOMAIN } from 'react-native-dotenv';
 import styles from '../styles';
 import badge from '../images/badge.png';
 
