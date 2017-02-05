@@ -15,6 +15,7 @@ networkInterface.use([{
     }
 
     console.log('sso_token is', SSO_TOKEN);
+    console.log('API_URL in networkInterface is', API_URL);
     req.options.headers.authorization = `Bearer ${SSO_TOKEN}`;
     next();
   }

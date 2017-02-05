@@ -27,6 +27,8 @@
     jsCodeLocation = [CodePush bundleURL];
 #endif
 
+  NSLog(@"jsCodeLocation is %@", jsCodeLocation);
+  
   RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
                                                       moduleName:@"BreezeX"
                                                initialProperties:nil
