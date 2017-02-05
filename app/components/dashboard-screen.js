@@ -69,7 +69,7 @@ class DashboardScreen extends Component {
               () => this.props.navigation.navigate('account', { account })
             }
           >
-            <Text>{account.account_no} ${account.product_desc} ${account.bal}</Text>
+            <Text>{account.account_no} {account.product_desc} {account.bal}</Text>
           </TouchableHighlight>
         ))}
       </View>
